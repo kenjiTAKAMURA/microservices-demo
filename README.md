@@ -95,5 +95,5 @@ microservices-demo/
 4. フロントエンドアプリケーションを追加する
 
 ## 学習すること
-1. Node.js
+1. Node.js　npm
 2. APIゲートウェイの仕組み
