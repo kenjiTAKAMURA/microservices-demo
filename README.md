@@ -96,3 +96,4 @@ microservices-demo/
 
 ## 学習すること
 1. Node.js
+2. APIゲートウェイの仕組み
