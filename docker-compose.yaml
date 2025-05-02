@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  # APIゲートウェイ
+  api-gateway:
+    build: ./api-gateway
+    container_name: micro-api-gateway
+    ports:
+      - "3000:3000"
+    depends_on:
+      - user-service
+      - product-service
+    networks:
+      - microservices-network
+    environment:
+      - NODE_ENV=production
+
+  # ユーザーサービス
+  user-service:
+    build: ./user-service
+    container_name: micro-user-service
+    ports:
+      - "3001:3001"
+    networks:
+      - microservices-network
+
+  # 商品サービス
+  product-service:
+    build: ./product-service
+    container_name: micro-product-service
+    ports:
+      - "3002:3002"
+    networks:
+      - microservices-network
+
+# ネットワーク定義
+networks:
+  microservices-network:
+    driver: bridge
